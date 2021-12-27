@@ -1,6 +1,9 @@
 <template>
 	<lightning-card class="slds-size_medium slds-p-around_medium" variant="Narrow" title="Member Skills"
 		icon-name="standard:account">
+		<div if:true={error} class="slds-box slds-size_1-of-3 slds-align_absolute-center slds-text-color_error">
+			<p>{error}</p>
+		</div>
 		<lightning-input name="memberName" class="slds-size_1-of-3 slds-align_absolute-center" onchange={handleChange} type="text"
 			label="Name" value={memberName}></lightning-input>
 		<lightning-combobox name="teamId" label="Team" value={teamId} options={teamList} onchange={handleChange}

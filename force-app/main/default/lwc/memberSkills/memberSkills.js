@@ -5,6 +5,7 @@ export default class MemberSkills extends LightningElement {
 	@track teamId = '';
 	@track memberName = '';
 	@track memberSkills = '';
+	@track error;
 
     get teamList() {
 		let list = [];
@@ -20,25 +21,39 @@ export default class MemberSkills extends LightningElement {
         this[event.target.name] = event.target.value;
     }
 	handleSubmit(event) {
-		this.dispatchEvent(new CustomEvent('insert', {
-			detail : {
-				memberName: this.memberName,
-				teamId: this.teamId,
-				memberSkills: this.memberSkills
-			  }
-		}));
-		this.teamId = '';
-		this.memberName = '';
-		this.memberSkills = '';
+		this.validation();
+		if(this.isEmpty(this.error)){
+			this.dispatchEvent(new CustomEvent('insert', {
+				detail : {
+					memberName: this.memberName,
+					teamId: this.teamId,
+					memberSkills: this.memberSkills
+				  }
+			}));
+			this.teamId = '';
+			this.memberName = '';
+			this.memberSkills = '';
+		}
     }
-	showToast() {
-		this.dispatchEvent(
-			new ShowToastEvent({
-					  title: 'Successfully!',
-					  message: 'Record inserted successfully.',
-					  variant: 'success',
-					  mode: 'pester'
-				  })
-		 );
+	validation() {
+		if(this.isEmpty(this.memberName.trim())){
+			this.error = 'Please enter Member Name.';
+		}
+		else if(this.isEmpty(this.teamId.trim())){
+			this.error = 'Please select team.';
+		}
+		else if(this.isEmpty(this.memberSkills.trim())){
+			this.error = 'Please enter Skills.';
+		}
+		else{
+			this.error = null;
+		}
+	}
+	isEmpty(string){
+		if(string == '' || string == null || string == undefined){
+			return true;
+		}
+
+		return false;
 	}
 }
