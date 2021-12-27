@@ -1,0 +1,15 @@
+<template>
+	<lightning-card class="slds-size_medium slds-p-around_medium" variant="Narrow" title="Member Skills"
+		icon-name="standard:account">
+		<lightning-input name="memberName" class="slds-size_1-of-3 slds-align_absolute-center" onchange={handleChange} type="text"
+			label="Name" value={memberName}></lightning-input>
+		<lightning-combobox name="teamId" label="Team" value={teamId} options={teamList} onchange={handleChange}
+			class="slds-size_1-of-3 slds-align_absolute-center"></lightning-combobox>
+		<lightning-input name="memberSkills" type="text" label="Skills" value={memberSkills} onchange={handleChange}
+			class="slds-size_1-of-3 slds-align_absolute-center"></lightning-input>
+		<div slot="footer">
+			<lightning-button variant="brand" label="Submit" title="Primary action" onclick={handleSubmit}
+				class="slds-m-left_x-small"></lightning-button>
+		</div>
+	</lightning-card>
+</template>

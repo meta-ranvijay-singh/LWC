@@ -1,0 +1,36 @@
+<template>
+    <lightning-card class="slds-size_medium slds-p-around_medium" variant="Narrow" title="Teams List"
+		icon-name="standard:account">
+        <lightning-combobox name="teamId" label="Team" value={teamId} options={teamList} onchange={handleChange}
+        class="slds-size_1-of-3 slds-align_absolute-center"></lightning-combobox>
+
+        <template if:true={teammembers} for:each={teammembers} for:item="member" class="">
+            <lightning-card key={member.Id} class="slds-border_bottom slds-p-around_medium slds-size_1-of-3 slds-align_absolute-center">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-p-left_medium">
+                      <span>Name</span>
+                    </div>
+                    <div class="slds-col slds-p-right_medium">
+                      <span>{member.Name}</span>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col ">
+                      <span>Team</span>
+                    </div>
+                    <div class="slds-col ">
+                      <span>{member.Team__r.Name}</span>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col ">
+                      <span>Skills</span>
+                    </div>
+                    <div class="slds-col ">
+                      <span>{member.Skills__c}</span>
+                    </div>
+                </div>
+            </lightning-card>
+        </template>
+	</lightning-card>
+</template>

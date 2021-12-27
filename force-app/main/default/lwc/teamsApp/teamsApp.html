@@ -1,0 +1,6 @@
+<template>
+	<lightning-card class="slds-p-around_medium" variant="Narrow"  title="Teams App" icon-name="standard:account">
+		<c-member-skills teams={teams} oninsert={handleSubmit}></c-member-skills>
+		<c-teams-list teams={teams} teammembers={teamMemberList}></c-teams-list>
+	</lightning-card>
+</template>
