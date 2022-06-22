@@ -1,0 +1,18 @@
+[
+	{
+		"Id": "a4E55000000C88pEAC",
+		"Name": "Team1",
+		"Skills__c": "Wicket-Keeper",
+		"Team__r": {
+			"Name": "Team1"
+		}
+	},
+	{
+		"Id": "a4E55100000C88pEAC",
+		"Name": "Team1",
+		"Skills__c": "Wicket-Keeper",
+		"Team__r": {
+			"Name": "Team2"
+		}
+	}
+]

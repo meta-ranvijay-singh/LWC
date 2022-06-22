@@ -4,9 +4,10 @@
         <lightning-combobox name="teamId" label="Team" value={teamId} options={teamList} onchange={handleChange}
         class="slds-size_1-of-3 slds-align_absolute-center"></lightning-combobox>
 
-        <template if:true={teammembers} for:each={teammembers} for:item="member" class="">
-            <lightning-card key={member.Id} class="slds-border_bottom slds-p-around_medium slds-size_1-of-3 slds-align_absolute-center">
-                <div class="slds-grid slds-gutters">
+        <template if:true={isMember} for:each={teammembers} for:item="member" class="">
+          <lightning-card key={member.Id}
+            class="card-member slds-border_bottom slds-p-around_medium slds-size_1-of-3 slds-align_absolute-center">
+            <div class="slds-grid slds-gutters">
                     <div class="slds-col slds-p-left_medium">
                       <span>Name</span>
                     </div>

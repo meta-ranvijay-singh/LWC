@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-member-skills Create component renders component correctly 1`] = `
+<c-member-skills>
+  #shadow-root(open)
+    <lightning-card
+      class="slds-size_medium slds-p-around_medium"
+    >
+      #shadow-root(open)
+        <slot />
+        <slot
+          name="actions"
+        />
+        <slot
+          name="footer"
+        />
+        <slot
+          name="title"
+        />
+      <lightning-input
+        class="slds-size_1-of-3 slds-align_absolute-center"
+      >
+        #shadow-root(open)
+      </lightning-input>
+      <lightning-combobox
+        class="slds-size_1-of-3 slds-align_absolute-center"
+      >
+        #shadow-root(open)
+      </lightning-combobox>
+      <lightning-input
+        class="slds-size_1-of-3 slds-align_absolute-center"
+      >
+        #shadow-root(open)
+      </lightning-input>
+      <div
+        slot="footer"
+      >
+        <lightning-button
+          class="slds-m-left_x-small"
+          title="Primary action"
+        >
+          #shadow-root(open)
+        </lightning-button>
+      </div>
+    </lightning-card>
+</c-member-skills>
+`;

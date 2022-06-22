@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-teams-list Create component renders component correctly 1`] = `
+<c-teams-list>
+  #shadow-root(open)
+    <lightning-card
+      class="slds-size_medium slds-p-around_medium"
+    >
+      #shadow-root(open)
+        <slot />
+        <slot
+          name="actions"
+        />
+        <slot
+          name="footer"
+        />
+        <slot
+          name="title"
+        />
+      <lightning-combobox
+        class="slds-size_1-of-3 slds-align_absolute-center"
+      >
+        #shadow-root(open)
+      </lightning-combobox>
+    </lightning-card>
+</c-teams-list>
+`;

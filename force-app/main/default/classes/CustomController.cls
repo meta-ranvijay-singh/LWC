@@ -16,7 +16,7 @@ public with sharing class CustomController {
         );
         try{
             insert member;
-            return true;
+            return getTeamMember(member.Id);
         }
         catch(Exception e){
             return false;
@@ -34,6 +34,19 @@ public with sharing class CustomController {
             WHERE Team__c =:teamId
         ];
     }
+
+    @AuraEnabled(cacheable=true)
+    public static List<Team_Member__c> getTeamMember(Id memberId) {
+        if(memberId == null){
+            return null;
+        }
+        return [
+            SELECT Id, Name, Skills__c, Team__r.Name
+            FROM Team_Member__c
+            WHERE Id =:memberId
+        ];
+    }
+
     @AuraEnabled(cacheable=true)
     public static List<Team_Member__c> getAllTeamMembers() {
         return [
